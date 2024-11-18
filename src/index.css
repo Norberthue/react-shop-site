@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*  {
+  margin: 0;
+ }
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+html{
+    background: url(public/assets/images/header-img.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+}
+
+.slick-dots li.slick-active button:before {
+    color:rgb(105, 247, 49) ;
+}
+
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: rgb(105, 247, 49) ;
+}
+
+.slick-prev,
+.slick-next {
+  color: rgb(105, 247, 49) ;
+  
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: rgb(105, 247, 49) ;
+}
+
+
+
+
+
+
+
+
