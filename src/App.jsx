@@ -27,10 +27,12 @@ function App() {
         {page === 'services' ? <Services page={page} setPage={setPage} switchPages={switchPages}></Services> : null}
         {page === 'contact' ? <Contact page={page} setPage={setPage} switchPages={switchPages}></Contact> : null}
         {page === 'about' ? <About page={page} setPage={setPage} switchPages={switchPages}></About> : null}
+        
         <Routes>
           <Route path='/' element={<Sortiment></Sortiment>}></Route>
           <Route path='/:slug' element={<Product></Product>}></Route>
         </Routes> 
+        
         <CartTab></CartTab>
     </div>
   )

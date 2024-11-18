@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Header'
 export default function About(props) {
     const {page, setPage, switchPages} = props
+    
   return (
     <div className=' text-white '>
         <Header page={page} setPage={setPage} switchPages={switchPages}>
