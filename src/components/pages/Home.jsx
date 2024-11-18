@@ -3,7 +3,8 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick"
 import Header from '../Header'
-
+import Sortiment from './Sortiment'
+import { motion } from 'framer-motion'
 
 const data = [
   {
@@ -34,11 +35,18 @@ export default function Home(props) {
   };
 
   return (
-    <div className='text-white'>
+    <motion.div
+      
+    >
         <Header page={page} setPage={setPage} switchPages={switchPages}>
         </Header>
         
-        <div className=' flex flex-col sm:flex-row justify-center  gap-10 lg:gap-60 mt-0 pt-0  items-center h-[484px] '>
+        <motion.div
+          className='text-white flex flex-col sm:flex-row justify-center  gap-10 lg:gap-60 mt-0 pt-0  items-center h-[484px] '
+          initial={{width: 0}}
+          animate={{width:'100%'}}
+          exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+         >
           <div className='flex flex-col sm:flex-row gap-4 lg:gap-28 text-center sm:text-left items-center sm:ml-10'>
             <div className='flex sm:flex-col gap-4 sm:gap-4'>
               <i className="fa-brands fa-facebook hover: cursor-pointer"></i>
@@ -71,10 +79,11 @@ export default function Home(props) {
               </Slider>
             </div>
           </div>
-        </div>
+        </motion.div>
+        <Sortiment></Sortiment>
         
         
         
-    </div>
+    </motion.div>
   )
 }

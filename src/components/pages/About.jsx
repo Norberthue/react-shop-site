@@ -1,14 +1,22 @@
 import React from 'react'
 import Header from '../Header'
+import Sortiment from './Sortiment'
+import { motion } from 'framer-motion'
+
 export default function About(props) {
     const {page, setPage, switchPages} = props
     
   return (
-    <div className=' text-white '>
+    <div>
         <Header page={page} setPage={setPage} switchPages={switchPages}>
         </Header>
 
-        <div className='flex flex-col justify-center items-center h-[484px] sm:ml-12  gap-10 '>
+        <motion.div 
+        className='flex flex-col justify-center items-center h-[484px] sm:ml-12  gap-10 text-white'
+        initial={{width: 0}}
+        animate={{width:'100%'}}
+        exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+        >
           <div>
             <h1 className='font-semibold text-5xl  sm:text-6xl'><span className='underline underline-offset-8 decoration-lime-500'>Our</span> <span className='text-lime-500'>Story</span></h1>
           </div>
@@ -39,7 +47,8 @@ export default function About(props) {
             </div>
             
           </div>
-        </div>
+        </motion.div>
+        <Sortiment></Sortiment>
     </div>
   )
 }

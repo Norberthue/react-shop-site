@@ -3,7 +3,7 @@ import Footer from '../Footer'
 import {Link} from "react-router-dom"
 import { PRODUCTS } from '../../data/products'
 import emailjs from '@emailjs/browser'
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Sortiment() {
     const sendEmail = (e) => {
@@ -18,13 +18,15 @@ export default function Sortiment() {
             },
         );
     }
+    const navigate = useNavigate();
+    
 
     return (
         <div id={'sortiment'} className='bg-[#F2F2F2] flex flex-col items-center justify-center '>
             <div className='grid grid-cols-1 xl:grid-cols-2 gap-y-20 gap-x-16 pt-10 max-w-[1200px] mb-10'>
                 
                 <div className='flex flex-col justify-center gap-4 cursor-pointer'>
-                    <Link  to={PRODUCTS[0].slug}>
+                    <Link to={PRODUCTS[0].slug}>
                         <div className='bg-white group border border-lime-500 hover:border-8 ease-linear duration-200  flex flex-col items-center justify-center  w-auto h-auto  sm:w-[606px] sm:h-[396px]'> 
                             <img className='object-contain  group-hover:animate-pulse' src='/assets/images/fur7.jpg'></img>
                         </div>

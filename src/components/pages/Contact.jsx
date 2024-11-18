@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../Header'
 import emailjs from '@emailjs/browser'
+import Sortiment from './Sortiment'
+import { motion } from 'framer-motion'
 
 export default function Contact(props) {
     const {page, setPage, switchPages} = props
@@ -17,11 +19,16 @@ export default function Contact(props) {
       );
     }
   return (
-    <div className='text-white duration-200 ease-linear'>
+    <div>
         <Header page={page} setPage={setPage} switchPages={switchPages}>
         </Header>
         
-        <div className='flex flex-col justify-center items-center sm:gap-2 lg:ml-12 h-[484px] '>
+        <motion.div 
+        className='flex flex-col justify-center items-center sm:gap-2 lg:ml-12 h-[484px] text-white'
+        initial={{width: 0}}
+        animate={{width:'100%'}}
+        exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+        >
           <div>
             <h1 className='font-semibold text-4xl sm:text-6xl '><span className='text-lime-500'>Contact</span> <span className='underline underline-offset-8 decoration-lime-500'>Us</span></h1>
           </div>
@@ -64,7 +71,8 @@ export default function Contact(props) {
               </div>
               
           </div>
-        </div>
+        </motion.div>
+        <Sortiment></Sortiment>
     </div>
   )
 }

@@ -10,19 +10,19 @@ export default function Header(props) {
     const [totalQuantity, setTotalQuantity] = useState(0);
     const carts = useSelector(store => store.cart.items);
     const dispatch = useDispatch()
-    
     //total count of items
     useEffect(() => {
-        let total = 0;
-        carts.forEach(item => total += item.quantity);
-        setTotalQuantity(total)
+      let total = 0;
+      carts.forEach(item => total += item.quantity);
+      
+      setTotalQuantity(total)
     }, [carts])
-
+    
     const handleOpenTabCart = () => {
       dispatch(toggleStatusTab())
     }
-  return (
-    <div className='flex justify-between items-center text-white py-6 px-8 md:px-44'>
+    return (
+      <div className='flex justify-between items-center text-white py-6 px-8 md:px-44'>
         <div className='relative hidden lg:flex items-center justify-center gap-3 '>
             <input className='rounded-3xl pl-5 py-2 border-2 focus:outline-none focus:border-lime-500 focus:bg-slate-100 text-black duration-200' placeholder='Search'>
             </input>
@@ -37,10 +37,10 @@ export default function Header(props) {
           </div>
 
           <ul style={{transition: "transform 1s ease"}} className='hidden xl:flex justify-between gap-2 md:gap-7 text-base xl:text-xl transform transition-transform'>
-            <li onClick={switchPages('home')} className={`p-3 cursor-pointer transition-all duration-200  ${page === 'home' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'} `}>Home</li>
-            <li onClick={switchPages('services')} className={`p-3 cursor-pointer transition-all ${page === 'services' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Services</li>
-            <li onClick={switchPages('contact')} className={`p-3 cursor-pointer transition-all ${page === 'contact' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Contact</li>
-            <li onClick={switchPages('about')} className={`p-3 cursor-pointer transition-all ${page === 'about' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'}`}>About</li>
+          <Link  to={'/'}><li onClick={switchPages('home')} className={`p-3 cursor-pointer transition-all duration-200  ${page === 'home' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'} `}>Home</li></Link>
+          <Link  to={'/services'}><li onClick={switchPages('services')} className={`p-3 cursor-pointer transition-all ${page === 'services' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Services</li></Link>
+          <Link  to={'/contact'}><li onClick={switchPages('contact')} className={`p-3 cursor-pointer transition-all ${page === 'contact' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Contact</li></Link>
+          <Link  to={'/about'}><li onClick={switchPages('about')} className={`p-3 cursor-pointer transition-all ${page === 'about' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'}`}>About</li></Link>
           </ul>
         </div>
         
@@ -61,10 +61,10 @@ export default function Header(props) {
             
             style={{transition: "transform 0.3s ease, opacity 0.3 ease"}}
             >
-            <li onClick={switchPages('home')} className='list-none w-full text-center p-4 hover:bg-lime-500 text-black hover:text-white transition-all cursor-pointer'>Home</li>
-            <li onClick={switchPages('services')} className='list-none w-full text-center p-4 hover:bg-lime-500 text-black hover:text-white transition-all cursor-pointer'>Services</li>
-            <li onClick={switchPages('contact')} className='list-none w-full text-center p-4 hover:bg-lime-500 text-black hover:text-white transition-all cursor-pointer'>Contact</li>
-            <li onClick={switchPages('about')} className='list-none w-full text-center p-4 hover:bg-lime-500 text-black hover:text-white transition-all cursor-pointer'>About</li>
+            <Link  to={'/'}><li onClick={switchPages('home')} className={`p-3 text-black cursor-pointer transition-all duration-200  ${page === 'home' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'} `}>Home</li></Link>
+            <Link  to={'/services'}><li onClick={switchPages('services')} className={`p-3 text-black cursor-pointer transition-all ${page === 'services' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Services</li></Link>
+            <Link  to={'/contact'}><li onClick={switchPages('contact')} className={`p-3 text-black cursor-pointer transition-all ${page === 'contact' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Contact</li></Link>
+            <Link  to={'/about'}><li onClick={switchPages('about')} className={`p-3 text-black cursor-pointer transition-all ${page === 'about' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'}`}>About</li></Link>
         </div>
 
         <div onClick={handleOpenTabCart} className='xl:hidden relative w-10 h-10 bg-lime-500 rounded-full flex justify-center items-center'>
