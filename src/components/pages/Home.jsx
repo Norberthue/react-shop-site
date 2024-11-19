@@ -46,7 +46,7 @@ export default function Home(props) {
           initial={{opacity: 0, y: 20 }}
           animate={{opacity: 1, y:0 }}
           exit={{opacity: 0, y: -20}}
-          transition={{duration: 0.5 ,ease: "easeInOut"}}
+          transition={{duration: 1 ,ease: "easeInOut"}}
          >
           <div className='flex flex-col sm:flex-row gap-4 lg:gap-28 text-center sm:text-left items-center sm:ml-10'>
             <div className='flex sm:flex-col gap-4 sm:gap-4'>

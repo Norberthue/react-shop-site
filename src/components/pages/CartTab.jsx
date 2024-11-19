@@ -15,7 +15,7 @@ export default function CartTab() {
       }
     return (
         <div className={`fixed top-0 right-0  bg-gray-700 shadow-2xl w-96 h-full grid grid-rows-[60px-1fr-260px]
-        transform transition-transform duration-200
+        transform transition-transform duration-700
         ${statusTab === false ? 'translate-x-full':''}`}>
             <h2 className='p-5 text-white text-2xl'>Shopping Cart</h2>
             <div className='p-5'>

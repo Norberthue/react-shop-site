@@ -10,6 +10,7 @@ import Product from './components/pages/Product.jsx'
 import { Route, Routes } from "react-router-dom"
 import CartTab from './components/pages/CartTab.jsx'
 import { useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -23,8 +24,13 @@ function App() {
   }
   
   return (
-    <div className='text-base'>
-        <AnimatePresence mode='wait'>
+    <AnimatePresence mode='wait'>
+    <motion.div className='text-base'
+    initial={{opacity: 0, y: 20 }}
+    animate={{opacity: 1, y:0 }}
+    exit={{opacity: 0, y: -20}}
+    transition={{duration: 1 ,ease: "easeInOut"}}
+    >
           <Routes location={location} key={location.pathname}>
             <Route path='/' element={<Home page={page} setPage={setPage} switchPages={switchPages}></Home>}></Route>
             <Route path='/services' element={<Services page={page} setPage={setPage} switchPages={switchPages}></Services>}></Route>
@@ -35,10 +41,9 @@ function App() {
             <Route path='/contact/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
             <Route path='/about/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
           </Routes> 
-        </AnimatePresence>
-        
         <CartTab></CartTab>
-    </div>
+    </motion.div>
+    </AnimatePresence>
   )
 }
 

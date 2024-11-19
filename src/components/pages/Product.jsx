@@ -46,7 +46,7 @@ const Product = (props) => {
     initial={{opacity: 0, y: 20 }}
     animate={{opacity: 1, y:0 }}
     exit={{opacity: 0, y: -20}}
-    transition={{duration: 0.5 }}
+    transition={{duration: 1 ,ease: "easeInOut"}}
     >
         <div  className='h-screen bg-[#F2F2F2] flex flex-col gap-8  items-center  px-4 w-screen'>
             <div className='bg-gray-600 w-screen'>

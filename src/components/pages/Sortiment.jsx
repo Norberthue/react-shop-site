@@ -4,6 +4,7 @@ import {Link} from "react-router-dom"
 import { PRODUCTS } from '../../data/products'
 import emailjs from '@emailjs/browser'
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion'
 
 export default function Sortiment() {
     const sendEmail = (e) => {
@@ -22,7 +23,12 @@ export default function Sortiment() {
     
 
     return (
-        <div id={'sortiment'} className='bg-[#F2F2F2] flex flex-col items-center justify-center '>
+        <div id={'sortiment'} className='bg-[#F2F2F2] flex flex-col items-center justify-center '
+        initial={{opacity: 0, y: 20 }}
+        animate={{opacity: 1, y:0 }}
+        exit={{opacity: 0, y: -20}}
+        transition={{duration: 1 ,ease: "easeInOut"}}
+        >
             <div className='grid grid-cols-1 xl:grid-cols-2 gap-y-20 gap-x-16 pt-10 max-w-[1200px] mx-10 mb-10'>
                 
                 <div className='flex flex-col justify-center gap-4 cursor-pointer'>
