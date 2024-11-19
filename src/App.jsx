@@ -24,7 +24,7 @@ function App() {
   
   return (
     <div className='text-base'>
-        <AnimatePresence>
+        <AnimatePresence mode='wait'>
           <Routes location={location} key={location.pathname}>
             <Route path='/' element={<Home page={page} setPage={setPage} switchPages={switchPages}></Home>}></Route>
             <Route path='/services' element={<Services page={page} setPage={setPage} switchPages={switchPages}></Services>}></Route>

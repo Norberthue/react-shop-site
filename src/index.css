@@ -8,6 +8,10 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    background: url(public/assets/images/header-img.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
 }
 
 html{

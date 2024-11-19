@@ -24,10 +24,11 @@ export default function Contact(props) {
         </Header>
         
         <motion.div 
-        className='flex flex-col justify-center items-center sm:gap-2 lg:ml-12 h-[484px] text-white'
-        initial={{width: 0}}
-        animate={{width:'100%'}}
-        exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+        className='flex flex-col justify-center items-center sm:gap-2  h-[484px] text-white'
+        initial={{opacity: 0, y: 20 }}
+        animate={{opacity: 1, y:0 }}
+        exit={{opacity: 0, y: -20}}
+        transition={{duration: 0.5 ,ease: "easeInOut"}}
         >
           <div>
             <h1 className='font-semibold text-4xl sm:text-6xl '><span className='text-lime-500'>Contact</span> <span className='underline underline-offset-8 decoration-lime-500'>Us</span></h1>

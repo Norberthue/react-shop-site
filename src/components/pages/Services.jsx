@@ -7,20 +7,21 @@ import { motion } from 'framer-motion'
 export default function Services(props) {
   const {page, setPage, switchPages} = props
   return (
-    <motion.div
-      
+    <div
     >
         <Header page={page} setPage={setPage} switchPages={switchPages}>
         </Header>
 
         <motion.div 
-        className='flex flex-col justify-center items-center gap-10 sm:ml-12  h-[484px] text-white'
-        initial={{width: 0}}
-        animate={{width:'100%'}}
-        exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+        className='flex flex-col justify-center items-center gap-10   h-[484px] text-white'
+        
+        initial={{opacity: 0, y: 20 }}
+        animate={{opacity: 1, y:0 }}
+        exit={{opacity: 0, y: -20}}
+        transition={{duration: 0.5 ,ease: "easeInOut"}}
         >
-            <div className=''>
-              <h1 className='font-semibold text-5xl  sm:text-6xl '><span className='underline underline-offset-8 decoration-lime-500'>Our</span> <span className='text-lime-500'>Services</span> </h1>
+            <div>
+              <h1 className='font-semibold text-5xl sm:ml-12  sm:text-6xl '><span className='underline underline-offset-8 decoration-lime-500'>Our</span> <span className='text-lime-500'>Services</span> </h1>
             </div>
             
               <div className='grid grid-cols-2 sm:grid-cols-3 gap-5 text-center p-4'>
@@ -64,6 +65,6 @@ export default function Services(props) {
               </div>
         </motion.div>
         <Sortiment></Sortiment>
-    </motion.div>
+    </div>
   )
 }

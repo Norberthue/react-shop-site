@@ -12,15 +12,16 @@ export default function About(props) {
         </Header>
 
         <motion.div 
-        className='flex flex-col justify-center items-center h-[484px] sm:ml-12  gap-10 text-white'
-        initial={{width: 0}}
-        animate={{width:'100%'}}
-        exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+        className='flex flex-col justify-center items-center h-[484px]   gap-10 text-white'
+        initial={{opacity: 0, y: 20 }}
+        animate={{opacity: 1, y:0 }}
+        exit={{opacity: 0, y: -20}}
+        transition={{duration: 0.5 ,ease: "easeInOut"}}
         >
           <div>
             <h1 className='font-semibold text-5xl  sm:text-6xl'><span className='underline underline-offset-8 decoration-lime-500'>Our</span> <span className='text-lime-500'>Story</span></h1>
           </div>
-          <div className='flex flex-col sm:flex-row justify-center items-center  px-2 mb-20'>
+          <div className='flex flex-col sm:flex-row justify-center items-center  px-10 mb-20'>
             <div className='hidden sm:flex flex-col sm:border-r-4 border-lime-500 pr-2 ml-[-1px]'>
               <h1 className='mb-2 sm:text-3xl underline underline-offset-8 decoration-lime-500'>Crafting Timeless Wooden Furniture</h1>
               <p >At SimpleWood, we believe in the power of nature and craftsmanship. 

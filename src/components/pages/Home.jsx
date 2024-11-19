@@ -43,9 +43,10 @@ export default function Home(props) {
         
         <motion.div
           className='text-white flex flex-col sm:flex-row justify-center  gap-10 lg:gap-60 mt-0 pt-0  items-center h-[484px] '
-          initial={{width: 0}}
-          animate={{width:'100%'}}
-          exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+          initial={{opacity: 0, y: 20 }}
+          animate={{opacity: 1, y:0 }}
+          exit={{opacity: 0, y: -20}}
+          transition={{duration: 0.5 ,ease: "easeInOut"}}
          >
           <div className='flex flex-col sm:flex-row gap-4 lg:gap-28 text-center sm:text-left items-center sm:ml-10'>
             <div className='flex sm:flex-col gap-4 sm:gap-4'>
@@ -66,7 +67,7 @@ export default function Home(props) {
             </div>
           </div>
           
-          <div className='h-[200px] w-[200px] sm:w-[400px] sm:h-[400px] '>
+          <div className='h-[200px] w-[200px] sm:w-[400px] sm:h-[400px] mb-10'>
             <div >
               <Slider {...settings}>
                   {data.map((item, itemIndex)=> {
