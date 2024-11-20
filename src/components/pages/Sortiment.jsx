@@ -23,11 +23,11 @@ export default function Sortiment() {
     
 
     return (
-        <div id={'sortiment'} className='bg-[#F2F2F2] flex flex-col items-center justify-center '
+        <motion.div id={'sortiment'} className='bg-[#F2F2F2] flex flex-col items-center justify-center '
         initial={{opacity: 0, y: 20 }}
         animate={{opacity: 1, y:0 }}
         exit={{opacity: 0, y: -20}}
-        transition={{duration: 1 ,ease: "easeInOut"}}
+        transition={{duration: 0.5 ,ease: "easeInOut"}}
         >
             <div className='grid grid-cols-1 xl:grid-cols-2 gap-y-20 gap-x-16 pt-10 max-w-[1200px] mx-10 mb-10'>
                 
@@ -139,7 +139,7 @@ export default function Sortiment() {
             
                 <Footer></Footer>
         
-        </div>
+        </motion.div>
     
     )
 }

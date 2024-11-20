@@ -28,7 +28,7 @@ export default function Contact(props) {
         initial={{opacity: 0, y: 20 }}
         animate={{opacity: 1, y:0 }}
         exit={{opacity: 0, y: -20}}
-        transition={{duration: 1 ,ease: "easeInOut"}}
+        transition={{duration: 0.5 ,ease: "easeInOut"}}
         >
           <div>
             <h1 className='font-semibold text-4xl sm:text-6xl '><span className='text-lime-500'>Contact</span> <span className='underline underline-offset-8 decoration-lime-500'>Us</span></h1>

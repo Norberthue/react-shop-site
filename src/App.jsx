@@ -13,6 +13,7 @@ import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import { AnimatePresence } from 'framer-motion';
+import Checkout from './components/pages/Checkout.jsx'
 
 function App() {
   const [page, setPage] = useState('home')
@@ -25,24 +26,28 @@ function App() {
   
   return (
     <AnimatePresence mode='wait'>
-    <motion.div className='text-base'
-    initial={{opacity: 0, y: 20 }}
-    animate={{opacity: 1, y:0 }}
-    exit={{opacity: 0, y: -20}}
-    transition={{duration: 1 ,ease: "easeInOut"}}
-    >
-          <Routes location={location} key={location.pathname}>
-            <Route path='/' element={<Home page={page} setPage={setPage} switchPages={switchPages}></Home>}></Route>
-            <Route path='/services' element={<Services page={page} setPage={setPage} switchPages={switchPages}></Services>}></Route>
-            <Route path='/contact' element={<Contact page={page} setPage={setPage} switchPages={switchPages}></Contact>}></Route>
-            <Route path='/about' element={<About page={page} setPage={setPage} switchPages={switchPages}></About>}></Route>
-            <Route path='/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
-            <Route path='/services/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
-            <Route path='/contact/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
-            <Route path='/about/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
-          </Routes> 
-        <CartTab></CartTab>
-    </motion.div>
+      <motion.div className='text-base'
+      initial={{opacity: 0, y: 20 }}
+      animate={{opacity: 1, y:0 }}
+      exit={{opacity: 0, y: -20}}
+      transition={{duration: 1 ,ease: "easeInOut"}}
+      >
+        <AnimatePresence mode='wait'>
+            <Routes location={location} key={location.pathname}>
+              <Route path='/' element={<Home page={page} setPage={setPage} switchPages={switchPages}></Home>}></Route>
+              <Route path='/services' element={<Services page={page} setPage={setPage} switchPages={switchPages}></Services>}></Route>
+              <Route path='/contact' element={<Contact page={page} setPage={setPage} switchPages={switchPages}></Contact>}></Route>
+              <Route path='/about' element={<About page={page} setPage={setPage} switchPages={switchPages}></About>}></Route>
+              <Route path='/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
+              <Route path='/services/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
+              <Route path='/contact/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
+              <Route path='/about/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
+              <Route path='/checkout'  element={<Checkout switchPages={switchPages}></Checkout>}></Route>
+
+            </Routes> 
+        </AnimatePresence>
+          <CartTab></CartTab>
+      </motion.div>
     </AnimatePresence>
   )
 }

@@ -10,6 +10,8 @@ export default function Header(props) {
     const [totalQuantity, setTotalQuantity] = useState(0);
     const carts = useSelector(store => store.cart.items);
     const dispatch = useDispatch()
+    let style1 = 'underline underline-offset-4 decoration-lime-500 duration-200'
+    let style2 = 'hover:text-lime-500 duration-200'
     //total count of items
     useEffect(() => {
       let total = 0;
@@ -37,10 +39,10 @@ export default function Header(props) {
           </div>
 
           <ul style={{transition: "transform 1s ease"}} className='hidden xl:flex justify-between gap-2 md:gap-7 text-base xl:text-xl transform transition-transform'>
-          <Link  to={'/'}><li onClick={switchPages('home')} className={`p-3 cursor-pointer transition-all duration-200  ${page === 'home' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'} `}>Home</li></Link>
-          <Link  to={'/services'}><li onClick={switchPages('services')} className={`p-3 cursor-pointer transition-all ${page === 'services' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Services</li></Link>
-          <Link  to={'/contact'}><li onClick={switchPages('contact')} className={`p-3 cursor-pointer transition-all ${page === 'contact' ? 'underline underline-offset-4 decoration-lime-500 duration-200': 'hover:text-lime-500 duration-200'}`}>Contact</li></Link>
-          <Link  to={'/about'}><li onClick={switchPages('about')} className={`p-3 cursor-pointer transition-all ${page === 'about' ? 'underline underline-offset-4 decoration-lime-500 duration-200' : 'hover:text-lime-500 duration-200'}`}>About</li></Link>
+          <Link  to={'/'}><li onClick={switchPages('home')} className={`p-3 cursor-pointer transition-all duration-200  ${page === 'home' ? style1 : style2} `}>Home</li></Link>
+          <Link  to={'/services'}><li onClick={switchPages('services')} className={`p-3 cursor-pointer transition-all ${page === 'services' ? style1: style2}`}>Services</li></Link>
+          <Link  to={'/contact'}><li onClick={switchPages('contact')} className={`p-3 cursor-pointer transition-all ${page === 'contact' ? style1: style2}`}>Contact</li></Link>
+          <Link  to={'/about'}><li onClick={switchPages('about')} className={`p-3 cursor-pointer transition-all ${page === 'about' ? style1 : style2}`}>About</li></Link>
           </ul>
         </div>
         
