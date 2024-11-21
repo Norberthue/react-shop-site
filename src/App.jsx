@@ -14,6 +14,7 @@ import { motion } from 'framer-motion'
 
 import { AnimatePresence } from 'framer-motion';
 import Checkout from './components/pages/Checkout.jsx'
+import PlaceOrder from './components/pages/PlaceOrder.jsx'
 
 function App() {
   const [page, setPage] = useState('home')
@@ -43,7 +44,7 @@ function App() {
               <Route path='/contact/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
               <Route path='/about/:slug'  element={<Product page={page} setPage={setPage} switchPages={switchPages}></Product>}></Route>
               <Route path='/checkout'  element={<Checkout switchPages={switchPages}></Checkout>}></Route>
-
+              <Route path='/checkout/place-order'  element={<PlaceOrder></PlaceOrder>}></Route>
             </Routes> 
         </AnimatePresence>
           <CartTab></CartTab>

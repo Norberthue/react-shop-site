@@ -29,7 +29,7 @@ export default function Sortiment() {
         exit={{opacity: 0, y: -20}}
         transition={{duration: 0.5 ,ease: "easeInOut"}}
         >
-            <div className='grid grid-cols-1 xl:grid-cols-2 gap-y-20 gap-x-16 pt-10 max-w-[1200px] mx-10 mb-10'>
+            <div className='grid grid-cols-1 xl:grid-cols-2 gap-y-20 gap-x-16 pt-10 max-w-[1200px] mx-5 mb-10'>
                 
                 <div className='flex flex-col justify-center gap-4 cursor-pointer'>
                     <Link to={PRODUCTS[0].slug}>

@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addToCart } from '../../stores/cart'
 import Header from '../Header';
 import { motion } from 'framer-motion'
+import SmallHeader from '../SmallHeader';
 
 const Product = (props) => {
   const { slug } = useParams();  //get value of what user click
@@ -47,17 +48,18 @@ const Product = (props) => {
     animate={{opacity: 1, y:0 }}
     exit={{opacity: 0, y: -20}}
     transition={{duration: 0.5 ,ease: "easeInOut"}}
+    className='flex flex-col gap-8   bg-[#F2F2F2]'
     >
-        <div  className='h-screen bg-[#F2F2F2] flex flex-col gap-8  items-center  px-4 w-screen'>
-            <div className='bg-gray-600 w-screen'>
-              <Header page={page} setPage={setPage} switchPages={switchPages}>
-              </Header>
+        <div className='h-screen bg-[#F2F2F2] flex flex-col gap-8 '>
+            <div className='bg-gray-700 '>
+            <Header page={page} setPage={setPage} switchPages={switchPages}>
+            </Header>
             </div>
-            <div className='flex flex-col sm:flex-row items-center  gap-2 my-auto sm:gap-10'>
-              <div className=' bg-white border border-lime-500'>
+            <div className='flex flex-col sm:flex-row items-center justify-center  gap-2 my-auto  sm:gap-10'>
+              <div className=' bg-white border border-lime-500 '>
                 <img className= 'object-contain w-auto h-[196px] sm:w-[606px] sm:h-[396px]' src={detail.image}></img>
               </div>
-              <div className='flex flex-col gap-5'>
+              <div className='flex flex-col gap-5 px-2'>
                 <h1 className='text-4xl max-w-[400px] text-black'>{detail.name}</h1>
                 <div className='flex justify-between '>
                   <div>

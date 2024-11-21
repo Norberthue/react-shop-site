@@ -21,6 +21,7 @@ export default function CartTab() {
             <div className='p-5'>
                 {carts.map((item, key) => 
                     <CartItem key={key} data={item}/>
+                    
                 )}
             </div>
             <div className='grid items-end grid-cols-2'>

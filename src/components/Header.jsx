@@ -24,7 +24,7 @@ export default function Header(props) {
       dispatch(toggleStatusTab())
     }
     return (
-      <div className='flex justify-between items-center text-white py-6 px-8 md:px-44'>
+      <div className='flex justify-between items-center text-white py-6 px-8 md:px-44 '>
         <div className='relative hidden lg:flex items-center justify-center gap-3 '>
             <input className='rounded-3xl pl-5 py-2 border-2 focus:outline-none focus:border-lime-500 focus:bg-slate-100 text-black duration-200' placeholder='Search'>
             </input>
