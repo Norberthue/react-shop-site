@@ -26,7 +26,7 @@ export default function CartTab() {
             </div>
             <div className='grid items-end grid-cols-2'>
                 <button className='bg-black text-white h-20 transition duration-150 ease-in-out  hover:bg-gray-500 active:bg-black' onClick={handleOpenTabCart}>CLOSE</button>
-                <Link className='w-0' to={'checkout'}><button className='text-white text-center pl-14 pr-32  h-20 transition duration-150 ease-in-out  bg-lime-500 hover:bg-lime-600 active:bg-lime-500'>CHECKOUT</button></Link>
+                <Link className='w-0' to={'checkout'}><button className='text-white text-center pl-14 pr-32  h-20 transition duration-150 ease-in-out  bg-lime-500 hover:bg-lime-600 active:bg-lime-500' onClick={handleOpenTabCart}>CHECKOUT</button></Link>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import CartItem from './CartItem';
@@ -8,12 +8,30 @@ import Item from './Item';
 import CartTab from './CartTab';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
+import { PRODUCTS } from '../../data/products';
+
 
 
 export default function Checkout(props) {
     const {switchPages} = props
+    const [detail, setDetail] = useState([])
     const carts = useSelector(store => store.cart.items);//get data about items in shopping cart
-    let carts_length = carts.length
+    let total = 0;
+    
+    function getTotalPrice() {
+      {carts.map((item) => {
+        let productId = item.productId
+        let quantity = item.quantity
+        let matchingProduct;
+        let findDetail = PRODUCTS.filter(product => product.id === productId);
+        matchingProduct = findDetail
+        total += matchingProduct[0].price * quantity
+       
+      })}
+    };
+    let ttl = getTotalPrice()
+    console.log(total)
+
     return (
     <motion.div className='bg-[#F2F2F2] text-black flex flex-col  gap-10'
     initial={{opacity: 0, y: 20 }}
@@ -68,11 +86,11 @@ export default function Checkout(props) {
                     )}
                 </div>
                 <div>
-                    <h2 className='p-5 text-2xl'>Total Amout: $2000</h2>
+                    <h2 className='p-5 text-2xl'>Total Amout: ${total}</h2>
                 </div>
             </div>
             
-            <Link to={'/checkout/place-order'} className='sm:w-screen max-w-[800px]'>
+            <Link to={'/checkout/place-order'} className='sm:w-screen max-w-[800px] mb-5'>
                 <button className='group/arrow pt-2 sm:w-screen max-w-[800px] pb-2 pl-5 pr-5 font-semibold text-[13px] rounded-xl transition duration-150 ease-in-out  bg-lime-500 hover:bg-lime-600 active:bg-lime-500' >
                     Place Order<i className="group-hover/arrow:ml-1 delay-100 duration-200  fa-solid fa-arrow-right pl-1 "></i>
                 </button>

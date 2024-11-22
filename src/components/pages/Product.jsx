@@ -51,7 +51,7 @@ const Product = (props) => {
     className='flex flex-col gap-8   bg-[#F2F2F2]'
     >
         <div className='h-screen bg-[#F2F2F2] flex flex-col gap-8 '>
-            <div className='bg-gray-700 '>
+            <div className='bg-gray-700'>
             <Header page={page} setPage={setPage} switchPages={switchPages}>
             </Header>
             </div>
