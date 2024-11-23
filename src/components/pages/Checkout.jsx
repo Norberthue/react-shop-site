@@ -109,7 +109,7 @@ export default function Checkout(props) {
             <div className='shadow-2xl order-2 rounded-xl sm:w-screen max-w-[800px]'>
               <h2 className='p-5  text-4xl underline underline-offset-4 decoration-lime-500'>Delivery</h2>
               <div className='flex justify-between items-center p-4 gap-4'>
-                <input type='radio' checked className='w-4 h-4'></input>
+                <input type='radio' defaultChecked className='w-4 h-4'></input>
                 <div>
                   <p className='font-medium text-md'>Free shipping (2-4 bussiness days)</p>
                 </div>
@@ -123,7 +123,7 @@ export default function Checkout(props) {
               <h2 className='p-5  text-4xl underline underline-offset-4 decoration-lime-500'>Payment</h2>
               <fieldset>
                 <div className='flex justify-between items-center p-4 gap-4'>
-                  <input type='radio' id='card' name="drone" value='card' className='w-4 h-4' checked></input>
+                  <input type='radio' id='card' name="drone" value='card' className='w-4 h-4' defaultChecked></input>
                   <div>
                     <p className='font-medium text-md'>Card</p>
                   </div>

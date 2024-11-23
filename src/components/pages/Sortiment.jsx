@@ -136,8 +136,10 @@ export default function Sortiment() {
                         </form>
                     </div>
                 </div>
-            
-                <Footer></Footer>
+                <div  >
+                    <Footer></Footer>
+                </div>
+                
         
         </motion.div>
     

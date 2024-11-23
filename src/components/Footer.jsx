@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col py-4 sm:py-0 sm:flex-row px-20  bg-gray-700 xl:w-screen max-w-[1900px] xl:h-[210px] text-white items-center justify-between gap-4 md:gap-8'>
+    <footer className='flex flex-col py-4 sm:py-0 sm:flex-row px-20  bg-gray-700 2xl:w-screen max-w-[1900px] xl:h-[210px] text-white items-center justify-between gap-4 md:gap-8'>
         <div className='flex gap-4  md:gap-10'>
             <h3 className='cursor-pointer'>Policy</h3>
             <h3 className='cursor-pointer'>Terms & Conditions</h3>
