@@ -4,17 +4,15 @@ import Home from './components/pages/Home.jsx'
 import Services from './components/pages/Services.jsx'
 import Contact from './components/pages/Contact.jsx'
 import About from './components/pages/About.jsx'
-import Header from './components/Header.jsx'
-import Sortiment from './components/pages/Sortiment.jsx'
 import Product from './components/pages/Product.jsx'
 import { Route, Routes } from "react-router-dom"
 import CartTab from './components/pages/CartTab.jsx'
 import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-
 import { AnimatePresence } from 'framer-motion';
 import Checkout from './components/pages/Checkout.jsx'
 import PlaceOrder from './components/pages/PlaceOrder.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   const [page, setPage] = useState('home')
@@ -47,6 +45,7 @@ function App() {
               <Route path='/checkout/place-order'  element={<PlaceOrder></PlaceOrder>}></Route>
             </Routes> 
         </AnimatePresence>
+        <Footer></Footer>
           <CartTab></CartTab>
       </motion.div>
     </AnimatePresence>

@@ -57,7 +57,7 @@ export default function Header(props) {
 
         <i onClick={() => setIsMenuOpen(!isMenuOpen)} className='bx bx-menu xl:hidden block text-5xl cursor-pointer'></i>
         <div className={`absolute z-10  xl:hidden top-24 left-0 w-full
-           bg-white flex flex-col items-center
+          bg-white flex flex-col items-center
             gap-6 text-lg transform transition-transform 
             ${isMenuOpen ? 'opacity-100 pointer-events-auto': 'opacity-0 pointer-events-none'}`}
             

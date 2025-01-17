@@ -37,7 +37,7 @@ export default function Checkout(props) {
         let findDetail = PRODUCTS.filter(product => product.id === productId);
         matchingProduct = findDetail
         total += matchingProduct[0].price * quantity
-       
+        
       })}
     };
     let ttl = getTotalPrice()
