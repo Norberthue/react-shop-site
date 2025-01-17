@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import SmallHeader from '../SmallHeader'
-import Footer from '../Footer'
 import { motion } from 'framer-motion'
 
 export default function PlaceOrder() {
@@ -19,9 +18,6 @@ export default function PlaceOrder() {
             <div>
                 <h1 className=' sm:text-4xl '>Thank you for your purchase</h1>
             </div>
-        </div>
-        <div>
-            <Footer></Footer>
         </div>
     </motion.div>
   )

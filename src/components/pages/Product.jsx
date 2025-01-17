@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react'
 import React from 'react';
-import Footer from '../Footer'
 import { useParams } from 'react-router-dom';
 import { PRODUCTS } from '../../data/products';
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart } from '../../stores/cart'
 import Header from '../Header';
 import { motion } from 'framer-motion'
-import SmallHeader from '../SmallHeader';
+
 
 const Product = (props) => {
   const { slug } = useParams();  //get value of what user click

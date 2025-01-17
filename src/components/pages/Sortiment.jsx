@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../Footer'
 import {Link} from "react-router-dom"
 import { PRODUCTS } from '../../data/products'
 import emailjs from '@emailjs/browser'
@@ -136,9 +135,6 @@ export default function Sortiment() {
                         </form>
                     </div>
                 </div>
-               
-                
-        
         </motion.div>
     
     )
