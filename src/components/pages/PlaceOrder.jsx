@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-import SmallHeader from '../SmallHeader'
+import SmallHeader from './SmallHeader'
 import { motion } from 'framer-motion'
 
 export default function PlaceOrder() {

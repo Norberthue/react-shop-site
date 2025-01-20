@@ -3,7 +3,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import CartItem from './CartItem';
 import { useSelector } from 'react-redux';
-import SmallHeader from '../SmallHeader';
+import SmallHeader from './SmallHeader';
 import Item from './Item';
 import CartTab from './CartTab';
 import { Link, useNavigate } from 'react-router-dom';

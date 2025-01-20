@@ -46,7 +46,7 @@ function App() {
             </Routes> 
         </AnimatePresence>
         <Footer></Footer>
-          <CartTab></CartTab>
+        <CartTab></CartTab>
       </motion.div>
     </AnimatePresence>
   )
