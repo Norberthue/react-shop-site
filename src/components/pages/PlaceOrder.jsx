@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function PlaceOrder() {
   return (
-    <motion.div className='bg-[#F2F2F2] h-screen flex flex-col justify-between'
+    <motion.div className='bg-[#F2F2F2] h-screen flex flex-col '
     initial={{opacity: 0, y: 20 }}
     animate={{opacity: 1, y:0 }}
     exit={{opacity: 0, y: -20}}
@@ -14,9 +14,9 @@ export default function PlaceOrder() {
         <div className='bg-slate-600'>
             <SmallHeader></SmallHeader>
         </div>
-        <div className='flex justify-center items-center '>
+        <div className='flex m-auto'>
             <div>
-                <h1 className=' sm:text-4xl '>Thank you for your purchase</h1>
+                <h1 className='underline underline-offset-4 decoration-lime-500 text-xl sm:text-4xl lg:text-6xl '>Thank you for your purchase</h1>
             </div>
         </div>
     </motion.div>
