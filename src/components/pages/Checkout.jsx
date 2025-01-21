@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import CartItem from './CartItem';
@@ -70,10 +70,10 @@ export default function Checkout(props) {
         </div>
         
         <div className='flex  flex-col justify-center  items-center gap-10 '>
-            <div className='shadow-2xl rounded-xl order-4 mb-5'>
+            <div className='shadow-2xl rounded-xl  mb-5'>
                 <div className='flex flex-col justify-center sm:w-screen max-w-[800px]'>
                     <h2 className='text-4xl mt-5 ml-5 underline underline-offset-4 decoration-lime-500'>Billing Details</h2>
-                    <form onSubmit={handleSubmit} className='p-5 flex flex-col justify-center items-center gap-10 '>
+                    <form onSubmit={handleSubmit} id='myForm' className='p-5 flex flex-col justify-center items-center gap-10 '>
                         <label className='flex gap-5 items-center '>
                           <input onChange={handleInputChange} type='text' name="name" value={formState.name} className='focus:outline-none  sm:w-screen max-w-[700px] pl-2 py-2 border-slate-600 border-b-2 bg-transparent' placeholder='Name'></input>
                         </label>
@@ -98,15 +98,11 @@ export default function Checkout(props) {
                         <label className='flex gap-5 items-center'>
                           <input onChange={handleInputChange} type='text'  name="zip_code" value={formState.zip_code} className='focus:outline-none  sm:w-screen max-w-[700px] pl-2 py-2 border-slate-600 border-b-2 bg-transparent' placeholder='ZIP Code'></input>
                         </label>
-                        <button type='submit' className='group/arrow pt-2 sm:w-screen max-w-[700px] pb-2 pl-5 pr-5 font-semibold text-[13px] rounded-xl transition duration-150 ease-in-out  bg-lime-500 hover:bg-lime-600 active:bg-lime-500' >
-                            Place Order
-                          <i className="group-hover/arrow:ml-1 delay-100 duration-200  fa-solid fa-arrow-right pl-1 "></i>
-                        </button>
                     </form>
                 </div>
             </div>
 
-            <div className='shadow-2xl order-2 rounded-xl sm:w-screen max-w-[800px]'>
+            <div className='shadow-2xl  rounded-xl sm:w-screen max-w-[800px]'>
               <h2 className='p-5  text-4xl underline underline-offset-4 decoration-lime-500'>Delivery</h2>
               <div className='flex justify-between items-center p-4 gap-4'>
                 <input type='radio' defaultChecked className='w-4 h-4'></input>
@@ -119,7 +115,7 @@ export default function Checkout(props) {
               </div>
             </div>
 
-            <div className='shadow-2xl order-3 rounded-xl sm:w-screen max-w-[800px]'>
+            <div className='shadow-2xl  rounded-xl sm:w-screen max-w-[800px]'>
               <h2 className='p-5  text-4xl underline underline-offset-4 decoration-lime-500'>Payment</h2>
               <fieldset>
                 <div className='flex justify-between items-center p-4 gap-4'>
@@ -146,7 +142,7 @@ export default function Checkout(props) {
             </div>
 
             
-            <div className='shadow-2xl order-1 rounded-xl sm:w-screen max-w-[800px] '>
+            <div className='shadow-2xl mb-5 rounded-xl sm:w-screen max-w-[800px] '>
                 <h2 className='p-5  text-4xl underline underline-offset-4 decoration-lime-500'>Order Summary</h2>
                 <div className={`p-5 grid gap-2 `  }>
                     {carts.map((item, key) => 
@@ -156,6 +152,13 @@ export default function Checkout(props) {
                 <div>
                     <h2 className='p-5 text-2xl'>Total Price: ${total}</h2>
                 </div>
+                <div className='flex flex-col items-center mb-4'>
+                  <button type='submit' form='myForm' className='group/arrow pt-2 sm:w-screen max-w-[700px] pb-2 pl-5 pr-5 font-semibold text-[13px] rounded-xl transition duration-150 ease-in-out  bg-lime-500 hover:bg-lime-600 active:bg-lime-500' >
+                      Place Order
+                      <i className="group-hover/arrow:ml-1 delay-100 duration-200  fa-solid fa-arrow-right pl-1 "></i>
+                  </button>
+                </div>
+                
             </div>
             
             
