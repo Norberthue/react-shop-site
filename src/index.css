@@ -8,14 +8,13 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: url(public/assets/images/header-img.png);
     object-fit: cover;
     background-repeat: repeat-x;
     scroll-behavior: smooth;
 }
 
 html{
-    background: url(public/assets/images/header-img.png);
+    background-image: url(public/assets/images/header-img.png);
     object-fit: cover;
     background-repeat: repeat-x;
     scroll-behavior: smooth;
