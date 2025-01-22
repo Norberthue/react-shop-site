@@ -14,7 +14,7 @@ body {
 }
 
 html{
-    background-image: url(public/assets/images/header-img.png);
+    background-image: url(public/assets/images/header.jpg);
     object-fit: cover;
     background-repeat: repeat-x;
     scroll-behavior: smooth;
