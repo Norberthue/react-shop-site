@@ -20,7 +20,7 @@ const data = [
 ]
 
 export default function Home(props) {
-  const {page, setPage, switchPages} = props
+  const {page, setPage, switchPages, setCurrency, currency} = props
  
   var settings = {
     dots: true,
@@ -38,7 +38,7 @@ export default function Home(props) {
     <motion.div
       
     >
-        <Header page={page} setPage={setPage} switchPages={switchPages}>
+        <Header page={page} setCurrency={setCurrency} currency={currency} setPage={setPage} switchPages={switchPages}>
         </Header>
         
         <motion.div

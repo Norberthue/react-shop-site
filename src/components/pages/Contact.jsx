@@ -5,7 +5,7 @@ import Sortiment from './Sortiment'
 import { motion } from 'framer-motion'
 
 export default function Contact(props) {
-    const {page, setPage, switchPages} = props
+    const {page, setPage, switchPages,setCurrency, currency } = props
     const sendEmail = (e) => {
       e.preventDefault();
       emailjs.sendForm(import.meta.env.VITE_SERVERICE_ID, import.meta.env.VITE_TEMPLATE_ID_2, e.target, import.meta.env.VITE_PUBLIC_KEY)
@@ -20,7 +20,7 @@ export default function Contact(props) {
     }
   return (
     <div>
-        <Header page={page} setPage={setPage} switchPages={switchPages}>
+        <Header page={page} setPage={setPage} setCurrency={setCurrency}   currency={currency} switchPages={switchPages}>
         </Header>
         
         <motion.div 

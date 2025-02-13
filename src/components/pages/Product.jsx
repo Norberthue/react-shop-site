@@ -12,7 +12,7 @@ const Product = (props) => {
   const { slug } = useParams();  //get value of what user click
   const [detail, setDetail] = useState([]);
   const [quantity, setQuantity] = useState(1)
-  const {page, setPage, switchPages} = props
+  const {page, setPage, switchPages , currency, setCurrency } = props
   
   //filtering what page to show when clicking on product
   useEffect(() => { //redone when value of slug changes
@@ -51,7 +51,7 @@ const Product = (props) => {
     >
         <div className='h-screen bg-[#F2F2F2] flex flex-col gap-8 '>
             <div className='bg-gray-700'>
-            <Header page={page} setPage={setPage} switchPages={switchPages}>
+            <Header page={page} setPage={setPage} switchPages={switchPages}  currency={currency} setCurrency={setCurrency}>
             </Header>
             </div>
             <div className='flex flex-col sm:flex-row items-center justify-center  gap-2 my-auto  sm:gap-10'>
@@ -63,7 +63,7 @@ const Product = (props) => {
                 <div className='flex justify-between '>
                   <div>
                     <p className='font-extralight'>As low as</p>
-                    <p className='font-semibold'>${detail.price}</p>
+                    <p className='font-semibold'>{currency === 'USD' ? '$' + detail.price: '€' + detail.price}</p>
                   </div>
                   <div>
                     <p className='font-semibold'><i className="fa-solid fa-circle text-lime-500 text-sm"></i> In Stock</p>

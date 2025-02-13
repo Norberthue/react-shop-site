@@ -5,11 +5,11 @@ import { motion } from 'framer-motion'
 
 
 export default function Services(props) {
-  const {page, setPage, switchPages} = props
+  const {page, setPage, switchPages, setCurrency, currency} = props
   return (
     <div
     >
-        <Header page={page} setPage={setPage} switchPages={switchPages}>
+        <Header page={page} setPage={setPage} switchPages={switchPages}  currency={currency}  setCurrency={setCurrency}>
         </Header>
 
         <motion.div 

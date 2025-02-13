@@ -5,6 +5,7 @@ import { changeQuantity } from '../../stores/cart';
 
 export default function CartItem(props) {
     const {productId, quantity} = props.data; 
+    const {setCurrency, currency} = props;
     const [detail, setDetail] = useState([])
     const dispatch = useDispatch();
     
@@ -31,7 +32,7 @@ export default function CartItem(props) {
         <div className='flex justify-between items-center bg-slate-600 text-white p-2 border-b-2 border-slate-700 gap-5 rounded-md'>
             <img src={detail.image} className='w-12'></img>
             <h3>{detail.name}</h3>
-            <p>${detail.price * quantity}</p>
+            <p>{currency === 'USD' ? '$' + detail.price * quantity: '€' + detail.price * quantity}</p>
             <div className='flex gap-2 justify-between w-20'>
                 <button className='bg-gray-300 w-6 h-6 text-lime-500 rounded-full' onClick={handleMinusQuantity}>-</button>
                 <span className=''>{quantity}</span>

@@ -10,10 +10,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import { PRODUCTS } from '../../data/products';
 
-
-
 export default function Checkout(props) {
-    const {switchPages} = props
+    const {switchPages, currency} = props
     const [detail, setDetail] = useState([])
     const carts = useSelector(store => store.cart.items);//get data about items in shopping cart
     let total = 0;
@@ -134,7 +132,7 @@ export default function Checkout(props) {
                     <p className='font-medium text-md'>Cash on delivery</p>
                   </div>
                   <div>
-                    <p className='font-semibold'>$1</p>
+                    <p className='font-semibold'> {currency === 'USD' ? '$1': '€1'}</p>
                   </div>
                 </div>
               </fieldset>
@@ -150,7 +148,7 @@ export default function Checkout(props) {
                     )}
                 </div>
                 <div>
-                    <h2 className='p-5 text-2xl'>Total Price: ${total}</h2>
+                    <h2 className='p-5 text-2xl'>Total Price: {currency === 'USD' ? '$' + total: '€' + total}</h2>
                 </div>
                 <div className='flex flex-col items-center mb-4'>
                   <button type='submit' form='myForm' className='group/arrow pt-2 sm:w-screen max-w-[700px] pb-2 pl-5 pr-5 font-semibold text-[13px] rounded-xl transition duration-150 ease-in-out  bg-lime-500 hover:bg-lime-600 active:bg-lime-500' >

@@ -13,6 +13,13 @@ body {
     scroll-behavior: smooth;
 }
 
+
+.bg-black-b {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255, 0.2);
+  backdrop-filter: blur(15px)
+}
+
 html{
     background-image: url(/assets/images/header.jpg);
     object-fit: cover;
