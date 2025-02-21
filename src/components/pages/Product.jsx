@@ -49,7 +49,7 @@ const Product = (props) => {
     transition={{duration: 0.5 ,ease: "easeInOut"}}
     className='flex flex-col gap-8   bg-[#F2F2F2]'
     >
-        <div className='h-screen bg-[#F2F2F2] flex flex-col gap-8 '>
+        <div className='h-screen bg-[#F2F2F2] flex flex-col gap-8 mb-20'>
             <div className='bg-gray-700'>
             <Header page={page} setPage={setPage} switchPages={switchPages}  currency={currency} setCurrency={setCurrency}>
             </Header>

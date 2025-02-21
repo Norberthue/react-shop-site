@@ -85,7 +85,7 @@ export default function Sortiment() {
                     </div>
                 </div>
                 
-                <div className=' bg-white py-2  group border border-lime-500 hover:border-8 ease-linear duration-200 flex items-center justify-center m-auto w-auto h-auto  sm:w-[606px] sm:h-[380px]  '>
+                <div className=' bg-white py-2 hidden group border border-lime-500 hover:border-8 ease-linear duration-200 sm:flex items-center justify-center m-auto w-auto h-auto  sm:w-[606px] sm:h-[380px]  '>
                     <div className='flex flex-col gap-5 pl-5'>
                         <h1 className='text-4xl'>Get <span className='text-lime-500 font-semibold'>10%</span> Discount</h1>
                         <p className='text-sm text-gray-500'>Get 10% discount with notified about the latest news and updates no span , we promise.</p>
@@ -121,7 +121,7 @@ export default function Sortiment() {
                 </div>
             </div>
 
-                <div className='flex flex-col md:flex-row px-10 gap-3  xl:gap-96 items-center justify-center 2xl:ml-10  bg-[#EBEFE5] h-[200px] max-w-[1200px] w-[330px] md:w-[600px] xl:w-max mb-12'>
+                <div className='hidden sm:flex flex-col md:flex-row px-10 gap-3  xl:gap-96 items-center justify-center 2xl:ml-10  bg-[#EBEFE5] h-[200px] max-w-[1200px] w-[330px] md:w-[600px] xl:w-max mb-12'>
                     <div className='flex flex-col gap-4 w-[330px] p-2 lg:w-[400px] '>
                         <h2 className='text-lg font-bold text-center lg:text-left'>Join Our newsletter for 10€ off</h2>
                         <p className='text-[12px] text-center lg:text-left'>We'll email you a voucher worth 10€ off your first order over 50€. By subscribing you agree to our Terms & Conditions 
